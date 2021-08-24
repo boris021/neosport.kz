@@ -1,0 +1,442 @@
+@use "sass:math";
+//<МИКСИНЫ>===============================================================================================
+@import "mixins";
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+@import "fonts";
+//</Подключаем шрифты>=======================================================================================
+
+//<Иконочные шрифты>==========================================================================================
+//@import "icons";
+//</Иконочные шрифты>==========================================================================================
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontFamily: 'Lalezar';
+$fontFamily: 'Montserrat';
+$fontSize: 14;
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>==========================================================================================================
+$minWidth: 320px;
+$maxWidth: 1920;
+$maxWidthContainer: 1170;
+$md1: $maxWidthContainer+12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+$mainColor: #000;
+$mainRed: #EF233C;
+$mainWhite: #fff;
+$mainGrey: #333;
+
+
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+@import "null";
+
+body {
+	color: $mainColor;
+
+	&._lock {
+		overflow: hidden;
+	}
+}
+
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+._container {
+	max-width: $maxWidthContainer + px;
+	margin: 0 auto;
+
+	@media (max-width: $md1 + px) {
+		max-width: 970px;
+	}
+
+	@media (max-width: $md2+px) {
+		max-width: 750px;
+	}
+
+	@media (max-width: $md3+px) {
+		max-width: none;
+		padding: 0 10px;
+	}
+}
+
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+@import "forms";
+@import "ui";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+//@import "datepicker";
+//@import "lightgallery";
+//@import "pagging";
+@import "popup";
+@import "header";
+@import "footer";
+@import "home";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+.page {
+	flex: 1 1 auto;
+}
+
+//===================================================================================================================================
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+
+// меню ==========================================================================
+.header {
+	z-index: 10;
+	background: url(../img/header-bg.jpg) center center/cover no-repeat;
+	z-index: 4;
+}
+
+.header__body {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 66px;
+}
+
+.header__container {
+	margin: 0px auto;
+	display: flex;
+	padding: 0px 10px;
+	align-items: center;
+	justify-content: space-between;
+	min-height: 70px;
+
+	@media (max-width:$md3+px) {
+		padding: 0 15px;
+	}
+}
+
+.header__logo {
+	position: relative;
+	width: 376px;
+	height: 56px;
+	z-index: 5;
+
+	@media (max-width:1190px) {
+		width: 306px;
+	}
+
+	@media (max-width:$md2+px) {
+		width: 250px;
+		margin-right: 20px;
+	}
+
+
+}
+
+.header__menu {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.menu__icon {
+	display: none;
+}
+
+.menu__list>li {
+	position: relative;
+	margin: 0px 0px 0px 20px;
+
+	@media (max-width:$md2+px) {
+		margin: 0px 0px 0px 10px;
+	}
+}
+
+.menu__link {
+	color: #E8E8E8;
+	font-size: 14px;
+
+	@media (max-width:$md2+px) {
+		font-size: 13px;
+	}
+}
+
+/* ----------------------- */
+body._pc .menu__list>li:hover .menu__sub-list {
+	opacity: 1;
+	visibility: visible;
+	transform: translate(0px, 0px);
+	pointer-events: all;
+}
+
+body._touch .menu__list>li {
+	display: flex;
+	align-items: center;
+}
+
+body._touch .menu__link {
+	flex: 1 1 auto;
+}
+
+
+body._touch .menu__list>li._active .menu__sub-list {
+	opacity: 1;
+	visibility: visible;
+	transform: translate(0px, 0px);
+	pointer-events: all;
+}
+
+
+/* ----------------------- */
+@media (min-width: 767px) {
+	.menu__list {
+		display: flex;
+		align-items: center;
+	}
+
+	.menu__list>li {
+		padding: 10px 0;
+	}
+}
+
+@media (max-width: 767px) {
+	.menu__icon {
+		z-index: 5;
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 18px;
+		cursor: pointer;
+	}
+
+	.menu__icon span,
+	.menu__icon::before,
+	.menu__icon::after {
+		left: 0;
+		position: absolute;
+		height: 10%;
+		width: 100%;
+		transition: all 0.3s ease 0s;
+		background-color: $mainWhite;
+	}
+
+	.menu__icon::before,
+	.menu__icon::after {
+		content: "";
+	}
+
+	.menu__icon::before {
+		top: 0;
+	}
+
+	.menu__icon::after {
+		bottom: 0;
+	}
+
+	.menu__icon span {
+		top: 50%;
+		transform: scale(1) translate(0px, -50%);
+	}
+
+	.menu__icon._active span {
+		transform: scale(0) translate(0px, -50%);
+	}
+
+	.menu__icon._active::before {
+		top: 50%;
+		transform: rotate(-45deg) translate(0px, -50%);
+	}
+
+	.menu__icon._active::after {
+		bottom: 50%;
+		transform: rotate(45deg) translate(0px, 50%);
+	}
+
+	.menu__body {
+		position: fixed;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.9);
+		padding: 100px 30px 30px 30px;
+		transition: left 0.3s ease 0s;
+		overflow: auto;
+	}
+
+	.menu__body._active {
+		left: 0;
+	}
+
+	.menu__body::before {
+		content: "";
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		height: 70px;
+		background-color: $mainRed;
+		z-index: 2;
+	}
+
+	.menu__list>li {
+		flex-wrap: wrap;
+		margin: 0px 0px 30px 0px;
+	}
+
+	.menu__list>li:last-child {
+		margin-bottom: 0;
+	}
+
+	.menu__list>li._active .menu__sub-list {
+		display: block;
+	}
+
+	.menu__link {
+		font-size: 24px;
+	}
+
+	.menu__sub-list {
+		position: relative;
+		background-color: $mainWhite;
+		flex: 1 1 100%;
+		margin: 20px 0px 0px 0px;
+		display: none;
+	}
+
+	.menu__sub-link {
+		font-size: 20px;
+		color: $mainColor;
+	}
+}
+
+.header__phone a {
+	display: flex;
+	justify-content: flex-end;
+	font-weight: 600;
+	font-size: 20px;
+	color: $mainWhite;
+	transition: color 0.3s ease 0s;
+	margin-left: 20px;
+
+	@media (max-width:$md2+px) {
+		display: none;
+	}
+
+	&:hover {
+		color: #E8E8E8;
+	}
+}
+
+// body _container ==============================================================
+.main-body {
+	display: flex;
+	align-items: center;
+	margin-bottom: 204px;
+}
+
+.text-red {
+	color: $mainRed;
+}
+
+.header {
+	color: $mainWhite;
+
+	&__title-offer {
+		font-weight: 600;
+		font-size: 42px;
+		line-height: 51px;
+		margin-bottom: 25px;
+	}
+
+	&__row {
+		width: 60%;
+
+	}
+
+	&__subtitle {
+		font-style: normal;
+		font-weight: 300;
+		font-size: 18px;
+		line-height: 22px;
+		margin-bottom: 25px;
+		color: $mainWhite;
+	}
+
+	&__img {
+		display: flex;
+		width: 40%;
+	}
+
+	&__images {
+		width: 472px;
+		height: 423px;
+	}
+}
+
+hr {
+	border: none;
+	background-color: $mainRed;
+	height: 4px;
+	width: 97px;
+	margin-bottom: 25px;
+}
+
+
+// advantage ==============================================================
+.advantage {
+	margin-top: -90px;
+	z-index: 5;
+}
+
+
+.advantage__items {
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: $mainWhite;
+	box-shadow: 0px 7px 4px rgba(0, 0, 0, 0.05);
+	border-radius: 30px;
+	padding: 18px;
+}
+
+.advantage__item {}
+
+.advantage_images {}
+
+.advantage__title {
+	font-weight: 600;
+	font-size: 15px;
+	line-height: 18px;
+	color: $mainColor;
+	margin-bottom: 5px;
+}
+
+.advantage__text {
+	font-size: 14px;
+	line-height: 17px;
+	text-align: center;
+	color: $mainColor;
+}
