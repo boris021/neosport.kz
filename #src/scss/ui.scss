@@ -1,4 +1,19 @@
 //<ОСНОВНОЙ БЛОК>====================================================================================================
+._title {
+	font-weight: bold;
+	font-size: 30px;
+	line-height: 37px;
+	color: $mainRed;
+
+	@media (max-width:$md3+px) {
+		font-weight: 600;
+		font-size: 26px;
+	}
+
+	&__black {
+		color: $mainColor;
+	}
+}
 
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 
@@ -8,9 +23,11 @@
 	content: "";
 	clear: both;
 }
+
 .rub:after {
 	content: "₽";
 }
+
 //====================================================================================================
 %noselect {
 	-webkit-touch-callout: none;
@@ -20,13 +37,16 @@
 	-ms-user-select: none;
 	user-select: none;
 }
+
 //====================================================================================================
 ol.counter {
 	list-style-type: none;
 	counter-reset: item;
+
 	li {
 		position: relative;
 		padding: 0px 0px 0px 45px;
+
 		&:before {
 			counter-increment: item;
 			content: counter(item);
@@ -45,6 +65,7 @@ ol.counter {
 		}
 	}
 }
+
 //====================================================================================================
 .ellipsis {
 	display: block;
@@ -53,11 +74,13 @@ ol.counter {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
+
 .es {
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
+
 //====================================================================================================
 .table {
 	display: table;
@@ -65,18 +88,23 @@ ol.counter {
 	width: 100%;
 	//table-layout: fixed;
 }
+
 .trow {
 	display: table-row;
 }
+
 .cell {
 	display: table-cell;
+
 	&.full {
 		width: 100%;
 	}
 }
+
 //====================================================================================================
 ._ibg {
 	position: relative;
+
 	img {
 		position: absolute;
 		width: 100%;
@@ -86,12 +114,14 @@ ol.counter {
 		object-fit: cover;
 	}
 }
+
 body.ie {
 	._ibg {
 		background-position: center;
 		background-size: cover;
 		background-repeat: no-repeat;
 	}
+
 	._ibg img {
 		width: 0;
 		height: 0;
@@ -99,12 +129,14 @@ body.ie {
 		visibility: hidden;
 	}
 }
+
 //====================================================================================================
 ._video {
 	position: relative;
 	overflow: hidden;
 	height: 0;
 	padding-bottom: 56.25%;
+
 	video,
 	iframe,
 	object,
@@ -116,7 +148,9 @@ body.ie {
 		height: 100%;
 	}
 }
+
 .videobg {
+
 	video,
 	iframe,
 	object,
@@ -133,42 +167,51 @@ body.ie {
 		background-size: cover;
 	}
 }
+
 //====================================================================================================
 // ._more-block
-._more-block {
-}
+._more-block {}
+
 // ._more-content
 ._more-content {
 	transition: all 0.3s ease 0s;
 	overflow: hidden;
 }
+
 // ._more-item
-._more-item {
-}
+._more-item {}
+
 // ._more-link
 ._more-link {
 	cursor: pointer;
+
 	span {
 		font-style: normal;
+
 		&:first-child {
 			display: block;
 		}
+
 		&:last-child {
 			display: none;
 		}
 	}
+
 	&._active {
 		span {
 			font-style: normal;
+
 			&:first-child {
 				display: none;
 			}
+
 			&:last-child {
 				display: block;
 			}
 		}
 	}
 }
+
 //====================================================================================================
 %graystyle {
 	transition: all 0.3s ease 0s;
@@ -177,19 +220,23 @@ body.ie {
 	-moz-filter: grayscale(1);
 	-o-filter: grayscale(1);
 }
+
 %graystyleoff {
 	filter: grayscale(0);
 	-webkit-filter: grayscale(0);
 	-moz-filter: grayscale(0);
 	-o-filter: grayscale(0);
 }
+
 //====================================================================================================
 #map {
 	background: url("../img/icons/loading.gif") center / 50px no-repeat;
 }
+
 //====================================================================================================
 ._swiper {
 	overflow: hidden;
+
 	//.swiper-wrapper
 	.swiper-wrapper {
 		width: 100%;
@@ -198,51 +245,62 @@ body.ie {
 		display: flex;
 		position: relative;
 	}
+
 	&.swiper-container-vertical {
 		.swiper-wrapper {
 			flex-direction: column;
 		}
 	}
+
 	&.swiper-container-autoheight {
 		.swiper-wrapper {
 			align-items: flex-start;
 		}
 	}
 }
+
 .swiper-container-initialized {
 	.swiper-slide {
 		flex-shrink: 0;
 		// transition-property: transform;
 	}
 }
+
 .swiper-container-android {
+
 	.swiper-slide,
 	.swiper-wrapper {
 		transform: translate3d(0px, 0, 0);
 	}
 }
+
 .swiper-button-lock {
 	display: none !important;
 }
+
 //====================================================================================================
-._tabs {
-}
-._tabs-item {
-}
+._tabs {}
+
+._tabs-item {}
+
 ._tabs-block {
 	display: none;
+
 	&._active {
 		display: block;
 	}
 }
+
 //=====================================================================================================================
 .mirror {
 	transform: scale(-1, 1);
 }
+
 //=====================================================================================================================
 .nicescroll-rails {
 	z-index: 1000 !important;
 }
+
 //========================================================================================================================================================
 
 //========================================================================================================================================================
@@ -253,6 +311,7 @@ body.ie {
 	width: 3px;
 	height: 100%;
 	z-index: 1000;
+
 	//background-color: rgba(0, 0, 0, 0.1);
 	&__line {
 		background-color: rgba(0, 0, 0, 0.5);
@@ -263,4 +322,5 @@ body.ie {
 		width: 100%;
 	}
 }
+
 //</ГОТОВЫЕ КЛАССЫ>====================================================================================================

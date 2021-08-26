@@ -364,13 +364,11 @@ body._touch .menu__list>li._active .menu__sub-list {
 	}
 }
 
-
-
 // body _container ==============================================================
 .main-body {
 	display: flex;
 	align-items: center;
-	margin-bottom: 204px;
+	margin-bottom: 120px;
 }
 
 .text-red {
@@ -435,7 +433,7 @@ hr {
 
 // advantage ==============================================================
 .advantage {
-	margin-top: -90px;
+	margin-top: -110px;
 	z-index: 5;
 }
 
@@ -477,4 +475,156 @@ hr {
 	line-height: 17px;
 	text-align: center;
 	color: $mainColor;
+}
+
+// о компании ==============================================================
+
+.about {
+	position: relative;
+	margin-top: -120px;
+	padding-top: 200px;
+	background: url(../img/about_bg.jpg) center center/cover no-repeat;
+	padding-bottom: 800px;
+}
+
+.about__line {
+	border-left: 2px solid $mainRed;
+	height: 50px;
+	left: 50%;
+	position: relative;
+	margin-left: -1px;
+	margin-bottom: 20px;
+}
+
+.about__body {
+	display: flex;
+	align-items: center;
+
+	@media (max-width:$md2+px) {
+		flex-wrap: wrap;
+	}
+}
+
+.about__img {
+	flex: 0 0 30%;
+	margin-right: 30px;
+
+	@media (max-width:$md2+px) {
+		margin-right: 0;
+		display: flex;
+		justify-content: center;
+		flex: 0 0 100%;
+		margin-bottom: 30px;
+	}
+}
+
+.about__img-bg {
+	width: 478px;
+	height: 441px;
+}
+
+.about__block {
+	text-align: center;
+}
+
+.about__title {
+	margin-bottom: 5px;
+}
+
+.about__text {
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 140%;
+	color: $mainGrey;
+	margin-bottom: 20px;
+}
+
+.about__line-gor {
+	border-bottom: 2px solid #EF233C;
+	margin-bottom: 15px;
+	height: 2px;
+	width: 80px;
+	left: 50%;
+	position: relative;
+	margin-left: -40px;
+}
+
+.about__btn {
+	display: inline-block;
+}
+
+.about__offer {
+	font-weight: 900;
+	font-size: 160px;
+	line-height: 195px;
+	text-align: center;
+	letter-spacing: 0.165em;
+	text-transform: uppercase;
+	color: rgba(0, 0, 0, 0.05);
+}
+
+.about__offer {
+	font-weight: 900;
+	font-size: 160px;
+	line-height: 195px;
+	text-align: center;
+	letter-spacing: 0.165em;
+	text-transform: uppercase;
+	color: rgba(0, 0, 0, 0.05);
+}
+
+.about__block-two {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	@media (max-width:$md2+px) {
+		flex-wrap: wrap;
+	}
+}
+
+.about__box-img {
+	position: relative;
+}
+
+.about__img-sport {
+	flex: 0 0 50%;
+
+	@media (max-width:$md2+px) {
+		display: flex;
+		justify-content: center;
+		flex: auto;
+		margin-bottom: 30px;
+	}
+}
+
+.about__plus-1 {
+	position: relative;
+	background: $mainRed;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	top: 100%;
+
+	&::before {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		display: block;
+		content: '';
+		border: 1px solid rgba(255, 255, 255, .5);
+		border-radius: 200px;
+		transform: scale(.35) translateY(-50%) translateX(-50%);
+		opacity: 0;
+		animation: marker-ripple-animation 2.6s cubic-bezier(.25, .9, .2, 1) .4s infinite;
+		color: $mainWhite;
+
+		&:hover {
+			color: $mainColor;
+			font-size: 50px;
+
+		}
+	}
+
+
 }
