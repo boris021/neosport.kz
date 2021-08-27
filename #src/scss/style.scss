@@ -1077,18 +1077,26 @@ tr:nth-child(even) {
 }
 
 .photo__items {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+
 	background-color: #ECF1F3;
 	box-shadow: 0px 7px 4px rgba(0, 0, 0, 0.05);
 	border-radius: 20px;
+
+
 	padding: 37px;
+}
+
+.photo__item {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
 	flex-wrap: wrap;
+	margin: auto;
 }
 
 .photo__img {
 	width: 257px;
 	height: 177px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
+
 }
