@@ -1,6 +1,6 @@
 //<ОСНОВНОЙ БЛОК>====================================================================================================
 ._title {
-	font-weight: bold;
+	font-weight: 600;
 	font-size: 30px;
 	line-height: 37px;
 	color: $mainRed;
@@ -11,6 +11,9 @@
 	}
 
 	&__black {
+		font-weight: 600;
+		font-size: 30px;
+		line-height: 37px;
 		color: $mainColor;
 	}
 }
