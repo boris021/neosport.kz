@@ -2997,8 +2997,8 @@ tr:nth-child(even) {
 }
 
 .sertificat__slider {
+  position: relative;
   margin-top: 40px;
-  display: flex;
 }
 
 .sert__slider {

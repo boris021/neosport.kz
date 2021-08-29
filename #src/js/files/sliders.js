@@ -71,7 +71,7 @@ let slider_about = new Swiper('.sertificat__slider', {
 	*/
 	observer: true,
 	observeParents: true,
-	slidesPerView: 3,
+	slidesPerView: 2,
 	spaceBetween: 20,
 	autoHeight: true,
 	speed: 800,
@@ -81,14 +81,14 @@ let slider_about = new Swiper('.sertificat__slider', {
 	//preloadImages: false,
 	//lazy: true,
 	// Dotts
-	//pagination: {
-	//	el: '.slider-quality__pagging',
-	//	clickable: true,
-	//},
+	// pagination: {
+	// el: '.slider-quality__pagging',
+	// 	clickable: true,
+	// },
 	// Arrows
 	navigation: {
-		nextEl: '.about__more .more__item_next',
-		prevEl: '.about__more .more__item_prev',
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
 	},
 
 	breakpoints: {
