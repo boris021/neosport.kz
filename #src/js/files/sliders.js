@@ -32,7 +32,7 @@ if (sliders) {
 	sliders_bild_callback();
 }
 
-function sliders_bild_callback(params) { }
+function sliders_bild_callback(params) {}
 
 let sliderScrollItems = document.querySelectorAll('._swiper_scroll');
 if (sliderScrollItems.length > 0) {
@@ -59,9 +59,9 @@ if (sliderScrollItems.length > 0) {
 }
 
 
-function sliders_bild_callback(params) { }
+function sliders_bild_callback(params) {}
 
-let slider_about = new Swiper('.sertificat__slider', {
+let sertificat__slider = new Swiper('.sertificat__slider', {
 	/*
 	effect: 'fade',
 	autoplay: {
@@ -71,24 +71,24 @@ let slider_about = new Swiper('.sertificat__slider', {
 	*/
 	observer: true,
 	observeParents: true,
-	slidesPerView: 2,
+	slidesPerView: 3,
 	spaceBetween: 20,
 	autoHeight: true,
 	speed: 800,
 	//touchRatio: 0,
 	//simulateTouch: false,
-	//loop: true,
+	// loop: true,
 	//preloadImages: false,
 	//lazy: true,
 	// Dotts
-	// pagination: {
-	// el: '.slider-quality__pagging',
-	// 	clickable: true,
-	// },
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+	},
 	// Arrows
 	navigation: {
 		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
+		prevEl: '.swiper-button-prev'
 	},
 
 	breakpoints: {

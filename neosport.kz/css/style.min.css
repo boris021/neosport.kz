@@ -29,6 +29,39 @@
   font-weight: 400;
   font-style: normal;
 }
+[class^=_icon-]:before,
+[class*=" _icon-"]:before {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^=_icon-]:before,
+[class*=" _icon-"]:before {
+  display: block;
+}
+
+.icon-arrow-right:before {
+  content: "\ea3c";
+}
+
+.icon-arrow-left:before {
+  content: "\ea40";
+}
+
+.icon-circle-right:before {
+  content: "\ea42";
+}
+
+.icon-circle-left:before {
+  content: "\ea44";
+}
+
 * {
   padding: 0px;
   margin: 0px;
@@ -2997,11 +3030,36 @@ tr:nth-child(even) {
 }
 
 .sertificat__slider {
-  position: relative;
   margin-top: 40px;
 }
 
 .sert__slider {
   height: 307px;
   border: 2px solid #ececec;
+}
+
+.sert-img {
+  display: flex;
+  justify-content: center;
+}
+
+/* Стрелки */
+.sertificat__slider .swiper-button-prev::after,
+.sertificat__slider .swiper-button-next::after {
+  color: #000;
+  font-size: 80px;
+}
+
+/* Пагинация */
+.sertificat__slider .swiper-pagination {
+  bottom: 30px;
+}
+
+/* Буллеты */
+.sertificat__slider .swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  background-color: #000;
 }

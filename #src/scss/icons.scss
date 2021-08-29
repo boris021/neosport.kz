@@ -16,3 +16,19 @@
 		display: block;
 	}
 }
+
+.icon-arrow-right:before {
+	content: "\ea3c";
+}
+
+.icon-arrow-left:before {
+	content: "\ea40";
+}
+
+.icon-circle-right:before {
+	content: "\ea42";
+}
+
+.icon-circle-left:before {
+	content: "\ea44";
+}

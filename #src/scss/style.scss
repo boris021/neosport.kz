@@ -13,7 +13,7 @@
 //</Подключаем шрифты>=======================================================================================
 
 //<Иконочные шрифты>==========================================================================================
-//@import "icons";
+@import "icons";
 //</Иконочные шрифты>==========================================================================================
 
 //<Шрифт по умолчанию>==========================================================================================
@@ -1207,11 +1207,36 @@ tr:nth-child(even) {
 }
 
 .sertificat__slider {
-	position: relative;
 	margin-top: 40px;
 }
 
 .sert__slider {
 	height: 307px;
 	border: 2px solid #ececec
+}
+
+.sert-img {
+	display: flex;
+	justify-content: center;
+}
+
+/* Стрелки */
+.sertificat__slider .swiper-button-prev::after,
+.sertificat__slider .swiper-button-next::after {
+	color: #000;
+	font-size: 80px;
+}
+
+/* Пагинация */
+.sertificat__slider .swiper-pagination {
+	bottom: 30px;
+}
+
+/* Буллеты */
+.sertificat__slider .swiper-pagination-bullet {
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 14px;
+	background-color: #000;
 }
