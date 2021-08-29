@@ -2986,3 +2986,22 @@ tr:nth-child(even) {
   display: inline-flex;
   margin: 0 auto;
 }
+
+.sertificat {
+  padding: 80px 0;
+}
+
+.sertificat__title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.sertificat__slider {
+  margin-top: 40px;
+  display: flex;
+}
+
+.sert__slider {
+  height: 307px;
+  border: 2px solid #ececec;
+}

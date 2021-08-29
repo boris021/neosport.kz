@@ -61,7 +61,7 @@ if (sliderScrollItems.length > 0) {
 
 function sliders_bild_callback(params) { }
 
-let slider_about = new Swiper('.about__slider', {
+let slider_about = new Swiper('.sertificat__slider', {
 	/*
 	effect: 'fade',
 	autoplay: {
@@ -71,8 +71,8 @@ let slider_about = new Swiper('.about__slider', {
 	*/
 	observer: true,
 	observeParents: true,
-	slidesPerView: 1,
-	spaceBetween: 0,
+	slidesPerView: 3,
+	spaceBetween: 20,
 	autoHeight: true,
 	speed: 800,
 	//touchRatio: 0,
@@ -90,7 +90,7 @@ let slider_about = new Swiper('.about__slider', {
 		nextEl: '.about__more .more__item_next',
 		prevEl: '.about__more .more__item_prev',
 	},
-	/*
+
 	breakpoints: {
 		320: {
 			slidesPerView: 1,
@@ -110,7 +110,7 @@ let slider_about = new Swiper('.about__slider', {
 			spaceBetween: 30,
 		},
 	},
-	*/
+
 	on: {
 		lazyImageReady: function () {
 			ibg();
