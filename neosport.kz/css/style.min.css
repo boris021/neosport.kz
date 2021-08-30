@@ -3024,6 +3024,10 @@ tr:nth-child(even) {
   padding: 80px 0;
 }
 
+.sertificat__slider {
+  position: relative;
+}
+
 .sertificat__title {
   text-align: center;
   margin-bottom: 10px;
@@ -3044,10 +3048,14 @@ tr:nth-child(even) {
 }
 
 /* Стрелки */
-.sertificat__slider .swiper-button-prev::after,
-.sertificat__slider .swiper-button-next::after {
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  width: 10%;
+  height: 10%;
   color: #000;
   font-size: 80px;
+  background: url(../img/icons/p-left.svg) center center/cover no-repeat;
+  background-color: #000;
 }
 
 /* Пагинация */
