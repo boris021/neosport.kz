@@ -1,7 +1,24 @@
 <div class="popup popup_popup">
 	<div class="popup__content">
 		<div class="popup__body">
-			<div class="popup__close"></div>
+			<div class="popup__close">X</div>
+			<div class="popup__title">Оставить заявку</div>
+			<div class="popup__form">
+				<form data-message="send" data-ajax="true" action="sendmail.php" method="POST" class="form">
+					<div class="form__line">
+						<input type="hidden" name="hidden" value="Оставить заявку"></p>
+						<input id="inp" autocomplete="on" name="name" type="name" name="form[]"
+							data-error="Вы не заполниле поле имя" data-value="" placeholder="Введите ваше имя"
+							class="input _req">
+					</div>
+					<div class="form__line">
+						<input id="inp2" autocomplete="on" name="tel" type="tel" name="form[]"
+							data-error="Вы не заполниле поле телефон" data-value="" placeholder="+7 700 000 0000"
+							class="input _phone _req">
+					</div>
+					<button type="submit" class="form__btn button btn_red ">Отправить</button>
+				</form>
+			</div>
 		</div>
 	</div>
 </div>

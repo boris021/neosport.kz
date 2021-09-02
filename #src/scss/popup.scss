@@ -10,6 +10,7 @@
 	height: 100%;
 	transition: visibility 0.8s ease 0s;
 	visibility: hidden;
+
 	&::before {
 		content: "";
 		background-color: rgba(0, 0, 0, 0.9);
@@ -21,27 +22,34 @@
 		opacity: 0;
 		transition: opacity 0.8s ease 0s;
 	}
+
 	&.show {
 		visibility: visible;
 		overflow: auto;
+
 		&::before {
 			opacity: 1;
 		}
+
 		.popup__body {
 			transform: scale(1);
 		}
 	}
+
 	&._active {
 		overflow: auto;
 		visibility: visible;
+
 		&::before {
 			opacity: 1;
 		}
+
 		.popup__body {
 			transition: all 0.3s ease 0.2s;
 			transform: scale(1);
 		}
 	}
+
 	// .popup__content
 	&__content {
 		display: flex;
@@ -54,26 +62,63 @@
 		justify-content: center;
 		align-items: center;
 	}
+
 	// .popup__body
 	&__body {
 		transform: scale(0);
 		transition: all 0.3s ease 0s;
 		background-color: #fff;
-		padding: 50px;
+		padding: 0px;
 		width: 100%;
-		max-width: 800px;
+		max-width: 600px;
 	}
+
 	// .popup__close
 	&__close {
 		width: 15px;
 		height: 15px;
 		position: absolute;
-		top: 0px;
-		right: 0px;
+		top: 15px;
+		right: 15px;
 		cursor: pointer;
 		z-index: 30;
-		background: url("../img/icons/close.svg") 0 0 no-repeat;
+		color: #fff;
+		// background: url("../img/icons/close.svg") 0 0 no-repeat;
 	}
 }
+
 //====================================================================================================
+
+.popup__title {
+	display: block;
+	font-size: 30px;
+	font-weight: 600;
+	text-align: center;
+	padding: 20px;
+	color: $mainWhite;
+	background-color: $mainRed;
+}
+
+.form__line {
+	padding: 30px 30px 0 30px;
+
+	&:last-child {
+		padding: 0;
+	}
+}
+
+.input {
+	border: 1px solid $mainRed;
+	padding: 16px;
+	font-size: 14px;
+	font-weight: 400;
+	border-radius: 30px
+}
+
+.form__btn {
+	margin: 30px;
+}
+
+
+
 //====================================================================================================
