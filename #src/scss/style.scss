@@ -1248,7 +1248,7 @@ tr:nth-child(even) {
 	justify-content: flex-start;
 	flex-direction: column;
 
-	@media (max-width:$md2+px) {
+	@media (max-width:$md3+px) {
 		flex: 0 0 100%;
 	}
 }
@@ -1300,10 +1300,15 @@ tr:nth-child(even) {
 	margin-bottom: 30px;
 }
 
+.contacts__map {
+	width: 35px;
+	height: 35px;
+}
+
 .contacts__maps {
 	flex: 0 0 60%;
 
-	@media (max-width:$md2+px) {
+	@media (max-width:$md3+px) {
 		flex: 1 1 100%;
 	}
 }

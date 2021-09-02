@@ -53,6 +53,7 @@ async function form_submit(e) {
 		e.preventDefault();
 	}
 }
+
 function form_validate(form) {
 	let error = 0;
 	let form_req = form.querySelectorAll('._req');
@@ -66,6 +67,7 @@ function form_validate(form) {
 	}
 	return error;
 }
+
 function form_validate_input(input) {
 	let error = 0;
 	let input_g_value = input.getAttribute('data-value');
@@ -94,6 +96,7 @@ function form_validate_input(input) {
 	}
 	return error;
 }
+
 function form_add_error(input) {
 	input.classList.add('_error');
 	input.parentElement.classList.add('_error');
@@ -107,6 +110,7 @@ function form_add_error(input) {
 		input.parentElement.insertAdjacentHTML('beforeend', '<div class="form__error">' + input_error_text + '</div>');
 	}
 }
+
 function form_remove_error(input) {
 	input.classList.remove('_error');
 	input.parentElement.classList.remove('_error');
@@ -116,6 +120,7 @@ function form_remove_error(input) {
 		input.parentElement.removeChild(input_error);
 	}
 }
+
 function form_clean(form) {
 	let inputs = form.querySelectorAll('input,textarea');
 	for (let index = 0; index < inputs.length; index++) {
@@ -161,6 +166,7 @@ let selects = document.getElementsByTagName('select');
 if (selects.length > 0) {
 	selects_init();
 }
+
 function selects_init() {
 	for (let index = 0; index < selects.length; index++) {
 		const select = selects[index];
@@ -176,6 +182,7 @@ function selects_init() {
 		}
 	});
 }
+
 function selects_close(e) {
 	const selects = document.querySelectorAll('.select');
 	if (!e.target.closest('.select') && !e.target.classList.contains('_option')) {
@@ -187,6 +194,7 @@ function selects_close(e) {
 		}
 	}
 }
+
 function select_init(select) {
 	const select_parent = select.parentElement;
 	const select_modifikator = select.getAttribute('class');
@@ -200,6 +208,7 @@ function select_init(select) {
 	new_select.appendChild(select);
 	select_item(select);
 }
+
 function select_item(select) {
 	const select_parent = select.parentElement;
 	const select_items = select_parent.querySelector('.select__item');
@@ -227,6 +236,7 @@ function select_item(select) {
 
 	select_actions(select, select_parent);
 }
+
 function select_actions(original, select) {
 	const select_item = select.querySelector('.select__item');
 	const selectTitle = select.querySelector('.select__title');
@@ -254,6 +264,7 @@ function select_actions(original, select) {
 		}
 		select.querySelector('.select__value').innerHTML = '<span>' + selectedOptionsText + '</span>';
 	}
+
 	function selectItemActions(type) {
 		if (!type) {
 			let selects = document.querySelectorAll('.select');
@@ -307,6 +318,7 @@ function select_actions(original, select) {
 		});
 	}
 }
+
 function select_get_options(select_options) {
 	if (select_options) {
 		let select_options_content = '';
@@ -321,6 +333,7 @@ function select_get_options(select_options) {
 		return select_options_content;
 	}
 }
+
 function select_search(e) {
 	let select_block = e.target.closest('.select ').querySelector('.select__options');
 	let select_options = e.target.closest('.select ').querySelectorAll('.select__option');
@@ -336,6 +349,7 @@ function select_search(e) {
 		}
 	}
 }
+
 function selects_update_all() {
 	let selects = document.querySelectorAll('select');
 	if (selects) {
@@ -391,7 +405,7 @@ function inputs_init(inputs) {
 					//'+38(999) 999 9999'
 					//'+375(99)999-99-99'
 					input.classList.add('_mask');
-					Inputmask("+375 (99) 9999999", {
+					Inputmask("+7(999) 999 999", {
 						//"placeholder": '',
 						clearIncomplete: true,
 						clearMaskOnLostFocus: true,
@@ -452,20 +466,24 @@ function inputs_init(inputs) {
 		}
 	}
 }
+
 function input_placeholder_add(input) {
 	const input_g_value = input.getAttribute('data-value');
 	if (input.value == '' && input_g_value != '') {
 		input.value = input_g_value;
 	}
 }
+
 function input_focus_add(input) {
 	input.classList.add('_focus');
 	input.parentElement.classList.add('_focus');
 }
+
 function input_focus_remove(input) {
 	input.classList.remove('_focus');
 	input.parentElement.classList.remove('_focus');
 }
+
 function input_clear_mask(input, input_g_value) {
 	input.inputmask.remove();
 	input.value = input_g_value;
@@ -502,7 +520,13 @@ if (priceSlider) {
 	noUiSlider.create(priceSlider, {
 		start: [0, 200000],
 		connect: true,
-		tooltips: [wNumb({ decimals: 0, prefix: textFrom + ' ' }), wNumb({ decimals: 0, prefix: textTo + ' ' })],
+		tooltips: [wNumb({
+			decimals: 0,
+			prefix: textFrom + ' '
+		}), wNumb({
+			decimals: 0,
+			prefix: textTo + ' '
+		})],
 		range: {
 			'min': [0],
 			'max': [200000]
