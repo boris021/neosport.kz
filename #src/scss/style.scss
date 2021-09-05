@@ -541,7 +541,7 @@ hr {
 }
 
 .about__text {
-	font-weight: 500;
+	font-weight: 600;
 	font-size: 14px;
 	line-height: 140%;
 	color: $mainGrey;
@@ -633,7 +633,7 @@ hr {
 /*кнопка плюс*/
 
 .callback-bt {
-	position: relative;
+	position: absolute;
 	background: $mainRed;
 	border-radius: 50%;
 	box-shadow: 0 8px 10px rgba(56, 163, 253, 0.3);
@@ -651,8 +651,8 @@ hr {
 }
 
 .callback-bt-1 {
-	left: 120px;
-	top: 0;
+	left: 220px;
+	top: 10px;
 }
 
 .callback-bt-2 {
@@ -661,7 +661,7 @@ hr {
 }
 
 .callback-bt-3 {
-	left: 220px;
+	left: 180px;
 	top: 250px;
 }
 
@@ -676,7 +676,7 @@ hr {
 }
 
 .callback-bt-6 {
-	left: 0px;
+	left: 400px;
 	top: 250px;
 }
 
@@ -746,7 +746,7 @@ hr {
 
 .tooltipp .tooltipptext-5 {
 	width: 210px;
-	margin-left: -10px;
+	margin-left: -110px;
 }
 
 .tooltipp .tooltipptext-6 {
